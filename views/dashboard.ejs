@@ -1,0 +1,117 @@
+<!-- made changes -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PANTOMATH_HomePage</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+	<style type="text/css">
+		
+		body
+		{
+			background-image: url("https://wallpapermemory.com/uploads/697/medical-wallpaper-hd-1920x1280-353057.jpg");
+			background-size: cover;
+			background-position: center;
+			background-attachment: fixed;
+		}
+
+	</style>
+</head>
+<body>
+	<div style="background-color: rgba(0,0,0,0.65);">
+
+    <!-- <a href="/login">Login</a>
+    <a href="/register">Signup</a>
+    <a href="/logout">Logout</a> -->
+
+	<div style="position:fixed; top: 0; width: 100%; z-index: 1;">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<a style="background-color: rgba(0,0,0,0.45); padding: 5px 30px; border-radius: 2px;" class="navbar-brand" href="#">
+				<span style="font-size: larger; font-weight: bolder; font-family: 'Times New Roman', Times, serif;">
+					<span style="color: springgreen;">Med</span>
+					<span style="color:#ff5465;">Web</span>
+				</span>
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse navbar-right" id="navbarNav">
+			  	<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+					<li class="nav-item active">
+					  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="#">About</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link" href="#">Predict</a>
+					</li>
+					<li class="nav-item">
+					  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Covid Resources</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav my-2 my-lg-0">
+					<% if(!currentUser){ %>
+					<li class="nav-item">
+						<a class="nav-link" href="/login">Login</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/register">Register</a>
+					</li>
+					<% } else { %>
+
+					<li class="nav-item">
+						<a class="nav-link" href="/dashboard/<%= currentUser._id %>"><b><%= currentUser.username %></b></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/logout">Logout</a>
+					</li>
+					<% } %>
+				</ul>
+			</div>
+		  </nav>
+	</div>
+
+	<div class="container mt-4">
+		<br><br><br>
+		<div class="jumbotron" style="width: 100%; background-color: rgba(0,0,0,0.45); text-align: center;">
+			<h1 style="color: white;" class="display-3">Online Covid-19 detector</h1>
+			<h3 style="color: turquoise; font-size: xx-large; font-weight: 300;">Using X-Ray impressions of Lungs</h3>
+			<br>
+		</div>
+		<div class="row">
+			<div class="col-lg-6 col-sm-12" style="max-height: 100%; min-height: 100%;">
+				<div style=" padding: 7px; background-color: rgba(0,20,20,0.65); height: 100%;">
+					<a id="but-p" href="/prediction" style="background-color: springgreen;" class="btn btn-lg btn-block">
+						Get Started
+					</a><br>
+					<p class="lead" style="color: white; text-align: justify;">
+						Now experience a faster test response for COVID-19. Upload the X-Ray image of the patient and let the system predict the result. So why to wait for the tedious and time consuming testing techniques, in an hour whose each and every minute is crucial for your patients or your dear ones.
+					</p>
+				</div>
+			</div>
+			<div class="col-lg-6 col-sm-12" style="max-height: 100%; min-height: 100%;">
+				<div style=" padding: 7px; background-color: rgba(0,20,20,0.65); height: 100%;">
+					<a id="but-r" href="/covid_resources" style="background-color: #ff5465;" class="btn btn-lg btn-block">
+						RESOURCES for COVID-19
+					</a><br>
+					<p class="lead" style="color: white; text-align: justify;">
+						Get an ample of resources for COVID-19. Click on the particular resource (hospital beds, oxygen cylinders, remdesivirs) that you need. No need to surf through millions of websites and social media sites to get what you require.
+					</p>
+				</div>
+			</div>
+		</div>
+
+	<div>
+		<br><br><br><br><br>
+		<h1><%= currentUser.username %> ioio</h1>
+		
+	</div>
+
+	</div>
+
+</body>
+</html>
